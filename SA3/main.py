@@ -20,6 +20,7 @@ video = cv2.VideoCapture("bb2.mp4")
 state = "play"
 
 while True:
+    # Write condition to check the current state is play or not
     if (state == "play"):
         check, image = video.read()
 
@@ -103,7 +104,10 @@ while True:
     if key == 32:
         print("Stopped")
         break
-    if key == 112:  # p key
+    # Pause the video when the p key is pressed
+    if key == 112:
         state = "pause"
-    if key == 108:  # l key
+    
+    # Play the video when the l key is pressed
+    if key == 108:
         state = "play"
